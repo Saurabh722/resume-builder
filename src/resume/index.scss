@@ -1,0 +1,331 @@
+$baseColor: #182153;
+$skillPoint: (100%/6);
+
+.darkpiece-resume {
+    padding: 15px;
+    text-align: left;
+
+    .print-btn {
+        position: fixed;
+        right: 10%;
+        font-size: 40px;
+        background: none;
+        border: 0;
+        z-index: 9999;
+        cursor: pointer;
+
+        &:after {
+            content: "\1F4E0";
+        }
+
+        &:hover {
+            filter: invert(0.9);
+        }
+    }
+
+    .resume-container {
+        max-width: 1100px;
+        margin: auto;
+
+        .resume-header {
+            text-align: left;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+
+            h3 {
+                font-weight: 100;
+                font-size: 1.6em;
+                letter-spacing: 1px;
+                margin-bottom: 3px;
+            }
+    
+            h4 {
+                margin: 10px 0;
+                font-weight: 100;
+                font-size: 0.9em;
+                font-family: 'Courier Prime', monospace;
+            }
+
+            p {
+                color: #000;
+                font-size: 14px;
+            }
+
+            .social-links {
+                .icons-wrapper {
+                    display: flex;
+                    font-size: 14px;
+                    justify-content: space-between;
+                    padding: 20px 0;
+                }
+
+                .icon {
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    color: $baseColor;
+                }
+
+                img {
+                    margin-right: 3px;
+                    width: 25px;
+                }
+            }
+        }
+        
+        .resume-body {
+            display: flex;
+
+            .main-title {
+                color: $baseColor;
+                border-bottom: 2px solid;
+                line-height: 22px;
+            }
+
+            .left-content {
+                width: 65%;
+            }
+
+            .right-content {
+                width: 35%;
+                padding-left: 20px;
+            }
+
+            .block-type-1 {
+                margin-bottom: 15px;
+                .detail-bock {
+                    margin-top: 20px;
+
+                    h3 {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        font-weight: 100;
+                        font-size: 0.9em;
+                        font-family: 'Courier Prime', monospace;
+                    }
+
+                    .block-title {
+                        font-size: 16px;
+                    }
+
+                    .duration {
+                        font-size: 10px;
+                    }
+
+                    ul {
+                        color: #000;
+                        margin: 15px 0 15px 15px;
+                        font-size: 13px;
+
+                        li {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+
+            .skill,
+            .rating {
+                position: relative;
+                font-family: 'Comfortaa', cursive;
+                font-size: 10px;
+            }
+
+            .skill {
+                display: flex;
+                flex-wrap: wrap;
+
+                h5 {
+                    font-size: 13px;
+                    line-height: 32px;
+                    width: 100%;
+                }
+
+                .badges {
+                    background-color: $baseColor;
+                    color: #fff;
+                    padding: 5px 7px;
+                    border-radius: 5px;
+                    margin: 0 5px 5px 0;
+                    font-size: 9px;
+                    font-weight: 600;
+                }
+            }
+
+            .plain {
+                color: #000;
+                font-size: 11px;
+                line-height: 16px;
+                margin-bottom: 5px;
+            }
+
+            .underline {
+                border-bottom: 1px solid #eee;
+            }
+
+            .rating {
+                margin-bottom: 20px;
+
+                &:first-of-type {
+                    margin-top: 10px;
+                }
+    
+                &:before {
+                    content: "";
+                    height: 2px;
+                    width: 90%;
+                    position: absolute;
+                    margin-top: 20px;
+                    border-radius: 3px;
+                    background: linear-gradient(90deg, $baseColor $skillPoint, #eeeeee $skillPoint * 5);
+                    box-sizing: border-box;
+                }
+    
+                &:after {
+                    content: "\265F";
+                    position: absolute;
+                    right: 0;
+                    font-size: 32px;
+                    margin-top: -3px;
+                }
+    
+                &.ok {
+                    &:before {
+                        background: linear-gradient(90deg, $baseColor $skillPoint * 2, #eeeeee $skillPoint * 4);
+                    }
+    
+                    &:after {
+                        content: "\265E";
+                    }
+                }
+    
+                &.average {
+                    &:before {
+                        background: linear-gradient(90deg, $baseColor $skillPoint * 3, #eeeeee $skillPoint * 3);
+                    }
+    
+                    &:after {
+                        content: "\265D";
+                    }
+                }
+    
+                &.good {
+                    &:before {
+                        background: linear-gradient(90deg, $baseColor $skillPoint * 4, #eeeeee $skillPoint * 2);
+                    }
+    
+                    &:after {
+                        content: "\265C";
+                    }
+                }
+    
+                &.excellent {
+                    &:before {
+                        // border-left: $skillPoint*5 solid $baseColor;
+                        // border-right: $skillPoint solid #eeeeee;
+                        background: linear-gradient(90deg, $baseColor $skillPoint * 5, #eeeeee $skillPoint);
+                    }
+    
+                    &:after {
+                        content: "\265B";
+                    }
+                }
+    
+                &.pro {
+                    &:before {
+                        background: $baseColor;
+                    }
+    
+                    &:after {
+                        content: "\265A";
+                    }
+                }
+            }
+        }
+
+        .block-type-2 {
+            padding-bottom: 10px;
+
+            .plain:first-of-type {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .resume-container {
+            max-width: 100%;
+    
+            .resume-header {    
+                .social-links {
+                    .icons-wrapper {
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+            
+            .resume-body {
+                flex-wrap: wrap;
+    
+                .left-content {
+                    width: 100%;
+                }
+    
+                .right-content {
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media print {
+    body {
+       -webkit-print-color-adjust: exact;
+    }
+
+    #root .darkpiece {
+        margin-top: 0;
+
+        .darkpiece-resume {
+            .resume-container {
+                max-width: 720px;
+
+                .resume-header {
+                    .social-links {
+                        .icons-wrapper {
+                            padding: 10px 0;
+                            font-size: 12px;
+                        }
+                    }
+                    p {
+                        font-size: 11px;
+                    }
+                }
+
+                .resume-body {
+                    .block-type-1 {
+                        .detail-bock {
+                            margin-top: 10px;
+
+                            ul {
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .print-btn,
+    .darkpiece-header,
+    .darkpiece-footer {
+        display: none;
+    }
+ }
